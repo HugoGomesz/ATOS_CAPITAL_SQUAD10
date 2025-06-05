@@ -1,0 +1,38 @@
+services:
+  db_filiais:
+    image: mysql:8.0.33
+    environment:
+      MYSQL_ROOT_PASSWORD: password123
+      MYSQL_DATABASE: atoscapitais
+      MYSQL_USER: adminuser
+      MYSQL_PASSWORD: password123
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_filiais_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uadminuser", "-ppassword123"]
+      interval: 10s
+      timeout: 20s
+      retries: 30
+
+  chatbot:
+    build: ./chatbot
+    ports:
+      - "8001:8001"
+    volumes:
+        - ./chatbot/src:/app/src
+    environment:
+      - PYTHONPATH=/app
+      - DB_HOST=db_filiais
+      - DB_USER=adminuser
+      - DB_PASSWORD=password123
+      - DB_NAME=atoscapitais
+    depends_on:
+      db_filiais:
+        condition: service_healthy
+    restart: unless-stopped
+
+
+volumes:
+  db_filiais_data:

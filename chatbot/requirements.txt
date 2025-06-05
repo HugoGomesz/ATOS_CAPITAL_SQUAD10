@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+httpx
+openai 
+slowapi
+sqlalchemy
+pymysql
+cryptography
