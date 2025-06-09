@@ -97,8 +97,3 @@ Cada dashboard possui a opção de exportação dos dados visualizados em **form
 - Docker e Docker Compose 
 - MySQL 8+
 - Conta com Evolution API
-
-### Backend
-```bash
-cd backend
-uvicorn main:app --reload
