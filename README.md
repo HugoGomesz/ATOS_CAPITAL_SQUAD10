@@ -48,9 +48,9 @@ Além disso, os relatórios podem ser baixados em PDF e enviados automaticamente
 ---
 
 ### 🔹 IA Generativa (Previsão de Vendas)
-- **Framework:** [PyTorch](https://pytorch.org/)  
+- **Framework:** [OpenAi](https://platform.openai.com/docs/libraries)  
 
-**Motivo:** Flexível e robusto para construção e treinamento de modelos de redes neurais personalizadas, com foco em previsões de vendas por padrão de comportamento.
+**Motivo:** Uma lib de facil uso, simples, boa documentação e suporte a múltiplos modelos de LLMs, facilitando a integração e evolução do projeto.
 
 ---
 
