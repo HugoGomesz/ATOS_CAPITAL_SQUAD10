@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pyodbc
 import plotly.express as px
-from PIL import Image
+from Pillow import Image
 import calendar
 
 st.set_page_config(layout="wide")
